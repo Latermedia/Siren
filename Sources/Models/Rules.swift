@@ -96,15 +96,18 @@ public class GlobalConditionalRules: Rules {
     private let voluntary: Int
     /// Numbers of releases the alert will force to update
     private let involuntary: Int
+    /// Numbers of major releases the alert will force to update
+    private let majorInvoluntary: Int
     
     /// Initializes the alert presentation with conditional rules. Default alert type for conditinal rules is .none
     /// - Parameters:
     ///   - frequency: How often a user should be prompted to update the app once a new version is available in the App Store.
     ///   - voluntary: Look for number of versions when to give option to update
     ///   - involuntary: Look for number of versions when to force to update
-    public init(promptFrequency: UpdatePromptFrequency, voluntary: Int, involuntary: Int) {
+    public init(promptFrequency: UpdatePromptFrequency, voluntary: Int, involuntary: Int, majorInvoluntary: Int) {
         self.voluntary = voluntary
         self.involuntary = involuntary
+        self.majorInvoluntary = majorInvoluntary
         super.init(promptFrequency: promptFrequency, forAlertType: .none)
     }
     
@@ -117,7 +120,18 @@ public class GlobalConditionalRules: Rules {
               let appStoreVersion = try? normalizeVersion(currentAppStoreVersion) else { return }
         // Force to update if AppStore major version is newer
         if appStoreVersion.major > installedVersion.major {
-            alertType = .force
+            // The installed version is 1 release behind
+            if appStoreVersion.major - installedVersion.major == 1 {
+                // Force to update if AppStore version is beyoud majorInvoluntary
+                if appStoreVersion.minor >= majorInvoluntary {
+                    alertType = .force
+                } else {
+                    alertType = .none
+                }
+            // Force to update if the installed major version is more than 1 release behind
+            } else {
+                alertType = .force
+            }
         // Force to update if AppStore minor version is older then given involuntary requirement
         } else if installedVersion.minor + involuntary <= appStoreVersion.minor {
             alertType = .force
