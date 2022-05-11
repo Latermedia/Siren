@@ -9,9 +9,9 @@
 import Foundation
 
 /// Alert Presentation Rules for Siren.
-public struct Rules {
+public class Rules {
     /// The type of alert that should be presented.
-    let alertType: AlertType
+    fileprivate(set) var alertType: AlertType
 
     /// The frequency in which a the user is prompted to update the app
     /// once a new version is available in the App Store and if they have not updated yet.
@@ -87,5 +87,63 @@ public extension Rules {
         case daily = 1
         /// Version check performed once a week.
         case weekly = 7
+    }
+}
+/// Global conditional rules that fires if currently installed version is back certain number of releases. Applicable to all Update types
+public class GlobalConditionalRules: Rules {
+    private typealias SemanticVersion = (major: Int, minor: Int, patch: Int, revision: Int)
+    /// Numbers of releases the alert will give an option to update next time
+    private let voluntary: Int
+    /// Numbers of releases the alert will force to update
+    private let involuntary: Int
+    
+    /// Initializes the alert presentation with conditional rules. Default alert type for conditinal rules is .none
+    /// - Parameters:
+    ///   - frequency: How often a user should be prompted to update the app once a new version is available in the App Store.
+    ///   - voluntary: Look for number of versions when to give option to update
+    ///   - involuntary: Look for number of versions when to force to update
+    public init(promptFrequency: UpdatePromptFrequency, voluntary: Int, involuntary: Int) {
+        self.voluntary = voluntary
+        self.involuntary = involuntary
+        super.init(promptFrequency: promptFrequency, forAlertType: .none)
+    }
+    
+    /// Modifies alert type if the currently installed version falls into condition
+    /// - Parameters:
+    ///   - currentInstalledVersion: currently installed app version on the device
+    ///   - currentAppStoreVersion: currently available app version in the AppStore
+    public func apply(currentInstalledVersion: String, currentAppStoreVersion: String) {
+        guard let installedVersion = try? normalizeVersion(currentInstalledVersion),
+              let appStoreVersion = try? normalizeVersion(currentAppStoreVersion) else { return }
+        // Force to update if AppStore major version is newer
+        if appStoreVersion.major > installedVersion.major {
+            alertType = .force
+        // Force to update if AppStore minor version is older then given involuntary requirement
+        } else if installedVersion.minor + involuntary <= appStoreVersion.minor {
+            alertType = .force
+        // Offer to update if AppStore minor version is older then given voluntary requirement
+        } else if installedVersion.minor + voluntary <= appStoreVersion.minor {
+            alertType = .option
+        } else {
+        // Don't show an alert if the currently installed app is newer than given voluntary limit
+            alertType = .none
+        }
+    }
+    
+    /// Convert String representation of a version into SemanticVersion
+    /// - Parameter version: String representation of a version
+    /// - Returns: Converted String into SemanticVersion
+    private func normalizeVersion(_ version: String) throws -> SemanticVersion {
+        var components = DataParser.split(version: version)
+        guard !components.isEmpty else { throw KnownError.appStoreVersionArrayFailure }
+        // Fullfill if the passed version misses parts
+        while components.count < 4 { components.append(0) }
+        // Since components fullfilled it is safe to access by index
+        let major = components[0]
+        let minor = components[1]
+        let patch = components[2]
+        let revision = components[2]
+
+        return (major: major, minor: minor, patch: patch, revision: revision)
     }
 }

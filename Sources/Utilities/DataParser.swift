@@ -86,7 +86,7 @@ struct DataParser {
     /// - Parameter version: The version formatted `String`.
     ///
     /// - Returns: An array of integers representing a version of the app.
-    private static func split(version: String) -> [Int] {
+    static func split(version: String) -> [Int] {
         return version.lazy.split {$0 == "."}.map { String($0) }.map {Int($0) ?? 0}
     }
 }
