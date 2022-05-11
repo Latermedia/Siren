@@ -211,7 +211,10 @@ private extension Siren {
                                                    andAppStoreVersion: currentAppStoreVersion)
         do {
             let rules = try rulesManager.loadRulesForUpdateType(updateType)
-
+            
+            if let currentInstalledVersion = currentInstalledVersion {
+                (rules as? GlobalConditionalRules)?.apply(currentInstalledVersion: currentInstalledVersion, currentAppStoreVersion: currentAppStoreVersion)
+            }
             if rules.frequency == .immediately {
                 presentAlert(withRules: rules, forCurrentAppStoreVersion: currentAppStoreVersion, model: model, andUpdateType: updateType)
             } else {
