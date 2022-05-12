@@ -11,11 +11,17 @@ import Foundation
 /// The default constants used for the update alert's messaging.
 public struct AlertConstants {
     /// The text that conveys the message that there is an app update available
-    public static let alertMessage = "A new version of %@ is available. Please update to version %@ now."
+    public static let alertMessage = "A new version of %@ is available.\nPlease update to version %@."
+    
+    /// The text that conveys the message that there is an app update available for force alert type
+    public static let alertForceMessage = "To continue using %@,\nplease update to version %@."
 
     /// The alert title which defaults to *Update Available*.
     public static let alertTitle = "Update Available"
 
+    /// The alert title for force alert type which defaults to *Update Required*.
+    public static let alertForceTitle = "Update Required"
+    
     /// The button text that conveys the message that the user should be prompted to update next time the app launches.
     public static let nextTimeButtonTitle = "Next time"
 

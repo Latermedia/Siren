@@ -21,10 +21,16 @@ public class PresentationManager {
 
     /// The descriptive update message of the `UIAlertController`.
     let alertMessage: String
+    
+    /// The descriptive update message of the `UIAlertController` for force alert type.
+    let alertForceMessage: String
 
     /// The main message of the `UIAlertController`.
     let alertTitle: String
-
+    
+    /// The main message of the `UIAlertController`  for force alert type.
+    let alertForceTitle: String
+    
     /// The "Next time" button text of the `UIAlertController`.
     let nextTimeButtonTitle: String
 
@@ -46,7 +52,9 @@ public class PresentationManager {
     ///     - tintColor: The alert's tintColor. Settings this to `nil` defaults to the system default color.
     ///     - appName: The name of the app (overrides the default/bundled name).
     ///     - alertTitle: The title field of the `UIAlertController`.
+    ///     - alertForceTitle: The title field of the `UIAlertController` for force alert type.
     ///     - alertMessage: The `message` field of the `UIAlertController`.
+    ///     - alertForceMessage: The `message` field of the `UIAlertController` for force alert type.
     ///     - nextTimeButtonTitle: The `title` field of the Next Time Button `UIAlertAction`.
     ///     - skipButtonTitle: The `title` field of the Skip Button `UIAlertAction`.
     ///     - updateButtonTitle: The `title` field of the Update Button `UIAlertAction`.
@@ -54,13 +62,17 @@ public class PresentationManager {
     public init(alertTintColor tintColor: UIColor? = nil,
                 appName: String? = nil,
                 alertTitle: String  = AlertConstants.alertTitle,
+                alertForceTitle: String  = AlertConstants.alertForceTitle,
                 alertMessage: String  = AlertConstants.alertMessage,
+                alertForceMessage: String  = AlertConstants.alertForceMessage,
                 updateButtonTitle: String  = AlertConstants.updateButtonTitle,
                 nextTimeButtonTitle: String  = AlertConstants.nextTimeButtonTitle,
                 skipButtonTitle: String  = AlertConstants.skipButtonTitle,
                 forceLanguageLocalization forceLanguage: Localization.Language? = nil) {
         self.alertTitle = alertTitle
+        self.alertForceTitle = alertForceTitle
         self.alertMessage = alertMessage
+        self.alertForceMessage = alertForceMessage
         self.localization = Localization(appName: appName, andForceLanguageLocalization: forceLanguage)
         self.nextTimeButtonTitle = nextTimeButtonTitle
         self.updateButtonTitle = updateButtonTitle
@@ -91,23 +103,39 @@ extension PresentationManager {
                       forCurrentAppStoreVersion currentAppStoreVersion: String,
                       completion handler: CompletionHandler?) {
         UserDefaults.alertPresentationDate = Date()
-
+        let isForceAlertType = rules.alertType == .force
         // Alert Title
         let alertTitle: String
-        if self.alertTitle == AlertConstants.alertTitle {
-            alertTitle = localization.alertTitle()
-        } else {
-            alertTitle = self.alertTitle
-        }
 
+        if isForceAlertType {
+            if self.alertForceTitle == AlertConstants.alertForceTitle {
+                alertTitle = localization.alertForceTitle()
+            } else {
+                alertTitle = self.alertForceTitle
+            }
+        } else {
+            if self.alertTitle == AlertConstants.alertTitle {
+                alertTitle = localization.alertTitle()
+            } else {
+                alertTitle = self.alertTitle
+            }
+        }
         // Alert Message
         let alertMessage: String
-        if self.alertMessage == AlertConstants.alertMessage {
-            alertMessage = localization.alertMessage(forCurrentAppStoreVersion: currentAppStoreVersion)
+        if isForceAlertType {
+            if self.alertForceMessage == AlertConstants.alertForceMessage {
+                alertMessage = localization.alertForceMessage(forCurrentAppStoreVersion: currentAppStoreVersion)
+            } else {
+                alertMessage = self.alertForceMessage
+            }
         } else {
-            alertMessage = self.alertMessage
+            if self.alertMessage == AlertConstants.alertMessage {
+                alertMessage = localization.alertMessage(forCurrentAppStoreVersion: currentAppStoreVersion)
+            } else {
+                alertMessage = self.alertMessage
+            }
         }
-
+    
         alertController = UIAlertController(title: alertTitle,
                                             message: alertMessage,
                                             preferredStyle: .alert)

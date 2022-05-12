@@ -133,12 +133,30 @@ public struct Localization {
 
         return String(format: message, appName, currentAppStoreVersion)
     }
+    
+    /// The localized string for the `UIAlertController`'s message field.  .
+    ///
+    /// - Returns: A localized string for the update message for force alert type.
+    public func alertForceMessage(forCurrentAppStoreVersion currentAppStoreVersion: String) -> String {
+        let message = Bundle.localizedString(forKey: AlertConstants.alertForceMessage,
+                                             andForceLocalization: forceLanguage)
+
+        return String(format: message, appName, currentAppStoreVersion)
+    }
 
     /// The localized string for the `UIAlertController`'s title field.  .
     ///
     /// - Returns: A localized string for the phrase "Update Available".
     public func alertTitle() -> String {
         return Bundle.localizedString(forKey: AlertConstants.alertTitle,
+                                      andForceLocalization: forceLanguage)
+    }
+    
+    /// The localized string for the `UIAlertController`'s title field.  .
+    ///
+    /// - Returns: A localized string for the phrase "Update Required".
+    public func alertForceTitle() -> String {
+        return Bundle.localizedString(forKey: AlertConstants.alertForceTitle,
                                       andForceLocalization: forceLanguage)
     }
 
