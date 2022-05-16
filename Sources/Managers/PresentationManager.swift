@@ -149,19 +149,22 @@ extension PresentationManager {
         if let tintColor = tintColor {
             alertController?.view.tintColor = tintColor
         }
+        let updateAction = updateAlertAction(completion: handler)
 
         switch rules.alertType {
         case .force:
-            alertController?.addAction(updateAlertAction(completion: handler))
+            alertController?.addAction(updateAction)
+            alertController?.preferredAction = updateAction
         case .option:
-            if UserDefaults.showTimes >= skippableAfter {
-                alertController?.addAction(nextTimeAlertAction(completion: handler))
-            } else {
+            if UserDefaults.showTimes > skippableAfter {
                 alertController?.addAction(skipAlertAction(forCurrentAppStoreVersion: currentAppStoreVersion, completion: handler))
+            } else {
+                alertController?.addAction(nextTimeAlertAction(completion: handler))
             }
-            alertController?.addAction(updateAlertAction(completion: handler))
+            alertController?.addAction(updateAction)
+            alertController?.preferredAction = updateAction
         case .skip:
-            alertController?.addAction(updateAlertAction(completion: handler))
+            alertController?.addAction(updateAction)
             alertController?.addAction(nextTimeAlertAction(completion: handler))
             alertController?.addAction(skipAlertAction(forCurrentAppStoreVersion: currentAppStoreVersion, completion: handler))
         case .none:
