@@ -165,6 +165,7 @@ extension PresentationManager {
             alertController?.preferredAction = updateAction
         case .skip:
             alertController?.addAction(updateAction)
+            alertController?.preferredAction = updateAction
             alertController?.addAction(nextTimeAlertAction(completion: handler))
             alertController?.addAction(skipAlertAction(forCurrentAppStoreVersion: currentAppStoreVersion, completion: handler))
         case .none:
