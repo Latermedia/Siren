@@ -34,7 +34,7 @@ public class PresentationManager {
     /// The "Next time" button text of the `UIAlertController`.
     let nextTimeButtonTitle: String
 
-    /// The "Skip this version" button text of the `UIAlertController`.
+    /// The "Skip This Version" button text of the `UIAlertController`.
     let skipButtonTitle: String
 
     /// The "Update" button text of the `UIAlertController`.
@@ -242,12 +242,12 @@ private extension PresentationManager {
         return action
     }
 
-    /// The `UIAlertAction` that is executed when the `Skip this version` option is selected.
+    /// The `UIAlertAction` that is executed when the `Skip This Version` option is selected.
     ///
     /// - Parameters:
     ///   - currentAppStoreVersion: The current version of the app in the App Store.
     ///   - handler: The completion handler that returns the `.skip` option.
-    /// - Returns: The `Skip this version` alert action.
+    /// - Returns: The `Skip This Version` alert action.
     func skipAlertAction(forCurrentAppStoreVersion currentAppStoreVersion: String, completion handler: CompletionHandler?) -> UIAlertAction {
         let title: String
         if skipButtonTitle == AlertConstants.skipButtonTitle {

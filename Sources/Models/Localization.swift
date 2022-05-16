@@ -168,9 +168,9 @@ public struct Localization {
                                       andForceLocalization: forceLanguage)
     }
 
-    /// The localized string for the "Skip this version" `UIAlertAction`.
+    /// The localized string for the "Skip This Version" `UIAlertAction`.
     ///
-    /// - Returns: A localized string for the phrase "Skip this version".
+    /// - Returns: A localized string for the phrase "Skip This Version".
     public func skipButtonTitle() -> String {
         return Bundle.localizedString(forKey: AlertConstants.skipButtonTitle,
                                       andForceLocalization: forceLanguage)

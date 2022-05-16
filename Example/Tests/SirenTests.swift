@@ -155,8 +155,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "المرة التالية")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "تخطى عن هذه النسخة")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "تخطى عن هذه النسخة")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "تحديث")
@@ -171,8 +171,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Հաջորդ անգամ")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Բաց թողնել այս տարբերակը")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Բաց թողնել այս տարբերակը")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Թարմացնել")
@@ -187,8 +187,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Hurrengo batean")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Bertsio honetatik jauzi egin")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Bertsio honetatik jauzi egin")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Eguneratu")
@@ -203,8 +203,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "下一次")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "跳过此版本")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "跳过此版本")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "更新")
@@ -219,8 +219,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "下次")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "跳過此版本")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "跳過此版本")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "更新")
@@ -235,8 +235,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Sljedeći put")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Preskoči ovu verziju")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Preskoči ovu verziju")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Ažuriraj")
@@ -251,8 +251,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Příště")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Přeskočit tuto verzi")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Přeskočit tuto verzi")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Aktualizovat")
@@ -267,8 +267,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Næste gang")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Spring denne version over")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Spring denne version over")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Opdater")
@@ -283,8 +283,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Volgende keer")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Sla deze versie over")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Sla deze versie over")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Updaten")
@@ -299,8 +299,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Järgmisel korral")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Jäta see version vahele")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Jäta see version vahele")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Uuenda")
@@ -315,8 +315,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Ensi kerralla")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Jätä tämä versio väliin")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Jätä tämä versio väliin")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Päivitys")
@@ -331,8 +331,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "La prochaine fois")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Sauter cette version")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Sauter cette version")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Mettre à jour")
@@ -347,8 +347,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Später")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Diese Version überspringen")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Diese Version überspringen")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Update")
@@ -363,8 +363,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Άλλη φορά")
         
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Αγνόησε αυτήν την έκδοση")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Αγνόησε αυτήν την έκδοση")
         
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Αναβάθμιση")
@@ -379,8 +379,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "בפעם הבאה")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "דלג על גרסה זו")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "דלג על גרסה זו")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "עדכן")
@@ -395,8 +395,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Később")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Ennél a verziónál ne figyelmeztessen")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Ennél a verziónál ne figyelmeztessen")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Frissítés")
@@ -411,8 +411,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Lain kali")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Lewati versi ini")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Lewati versi ini")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Perbarui")
@@ -427,8 +427,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "La prossima volta")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Salta questa versione")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Salta questa versione")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Aggiorna")
@@ -443,8 +443,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "次回")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "このバージョンをスキップ")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "このバージョンをスキップ")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "アップデート")
@@ -459,8 +459,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "다음에")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "이 버전 건너뜀")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "이 버전 건너뜀")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "업데이트")
@@ -475,8 +475,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Nākamreiz")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Izlaist šo versiju")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Izlaist šo versiju")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Atjaunināt")
@@ -491,8 +491,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Kitą kartą")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Praleisti šią versiją")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Praleisti šią versiją")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Atnaujinti")
@@ -507,8 +507,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Lain kali")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Langkau versi ini")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Langkau versi ini")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Muat turun")
@@ -523,8 +523,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Neste gang")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Hopp over denne versjonen")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Hopp over denne versjonen")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Oppdater")
@@ -539,8 +539,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "دفعه بعد")
         
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "رد این نسخه")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "رد این نسخه")
         
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "بروزرسانی")
@@ -555,8 +555,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "دگر بار")
         
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "رد این نسخه")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "رد این نسخه")
         
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "بروزرسانی")
@@ -571,8 +571,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "دفعه بعد")
         
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "رد این نسخه")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "رد این نسخه")
         
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "بروزرسانی")
@@ -587,8 +587,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Następnym razem")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Pomiń wersję")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Pomiń wersję")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Zaktualizuj")
@@ -603,8 +603,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Próxima vez")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Ignorar esta versão")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Ignorar esta versão")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Atualizar")
@@ -619,8 +619,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Próxima vez")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Ignorar esta versão")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Ignorar esta versão")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Actualizar")
@@ -635,8 +635,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Data viitoare")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Ignor această versiune")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Ignor această versiune")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Actualizare")
@@ -651,8 +651,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "В следующий раз")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Пропустить эту версию")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Пропустить эту версию")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Обновить")
@@ -667,8 +667,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Следећи пут")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Прескочи ову верзију")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Прескочи ову верзију")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Ажурирај")
@@ -683,8 +683,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Sledeći put")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Preskoči ovu verziju")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Preskoči ovu verziju")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Ažuriraj")
@@ -699,8 +699,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Naslednjič")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Ne želim")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Ne želim")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Namesti")
@@ -715,8 +715,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "La próxima vez")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Saltar esta versión")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Saltar esta versión")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Actualizar")
@@ -731,8 +731,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Nästa gång")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Hoppa över den här versionen")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Hoppa över den här versionen")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Uppdatera")
@@ -747,8 +747,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "ไว้คราวหน้า")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "ข้ามเวอร์ชั่นนี้")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "ข้ามเวอร์ชั่นนี้")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "อัพเดท")
@@ -763,8 +763,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Daha sonra")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Boşver")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Boşver")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Güncelle")
@@ -779,8 +779,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Наступного разу")
         
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Пропустити версію")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Пропустити версію")
         
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Оновити")
@@ -795,8 +795,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "اگلی مرتبہ")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "اس ورزن کو چھوڑ دیں")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "اس ورزن کو چھوڑ دیں")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "اپڈیٹ کریں")
@@ -811,8 +811,8 @@ extension SirenTests {
         // Next time
         XCTAssertEqual(Bundle.localizedString(forKey: "Next time", andForceLocalization: language), "Lần tới")
 
-        // Skip this version
-        XCTAssertEqual(Bundle.localizedString(forKey: "Skip this version", andForceLocalization: language), "Bỏ qua phiên bản này")
+        // Skip This Version
+        XCTAssertEqual(Bundle.localizedString(forKey: "Skip This Version", andForceLocalization: language), "Bỏ qua phiên bản này")
 
         // Update
         XCTAssertEqual(Bundle.localizedString(forKey: "Update", andForceLocalization: language), "Cập nhật")

@@ -1,4 +1,4 @@
-﻿/* Update alert message: A new version of {APP NAME} is available. Please update to version {NEW VERSION} now.*/
+/* Update alert message: A new version of {APP NAME} is available. Please update to version {NEW VERSION} now.*/
 "A new version of %@ is available. Please update to version %@ now." = "Đã có phiên bản mới của %@. Xin vui lòng cập nhật lên phiên bản %@.";
 
 /* Update alert title */
@@ -8,7 +8,7 @@
 "Next time" = "Lần tới";
 
 /* Update alert skip button title */
-"Skip this version" = "Bỏ qua phiên bản này";
+"Skip This Version" = "Bỏ qua phiên bản này";
 
 /* Update alert skip button title */
 "Update" = "Cập nhật";
