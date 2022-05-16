@@ -156,7 +156,7 @@ extension PresentationManager {
             alertController?.addAction(updateAction)
             alertController?.preferredAction = updateAction
         case .option:
-            if UserDefaults.showTimes > skippableAfter {
+            if UserDefaults.showTimes >= skippableAfter {
                 alertController?.addAction(skipAlertAction(forCurrentAppStoreVersion: currentAppStoreVersion, completion: handler))
             } else {
                 alertController?.addAction(nextTimeAlertAction(completion: handler))
