@@ -21,6 +21,9 @@ extension UserDefaults {
 
         /// Key that stores the version that a user decided to skip.
         case StoredSkippedVersion
+        
+        /// Key that stores number of times the alert has been presented.
+        case StoredShowTimes
     }
 
     /// Sets and Gets a `UserDefault` around storing a version that the user wants to skip updating.
@@ -38,6 +41,15 @@ extension UserDefaults {
             return standard.object(forKey: SirenKeys.StoredVersionCheckDate.rawValue) as? Date
         } set {
             standard.set(newValue, forKey: SirenKeys.StoredVersionCheckDate.rawValue)
+        }
+    }
+    
+    /// Sets and Gets a `UserDefault` around the number of times the alert has been presented.
+    static var showTimes: Int {
+        get {
+            return (standard.object(forKey: SirenKeys.StoredShowTimes.rawValue) as? Int) ?? 0
+        } set {
+            standard.set(newValue, forKey: SirenKeys.StoredShowTimes.rawValue)
         }
     }
 }

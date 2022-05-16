@@ -39,6 +39,9 @@ public class PresentationManager {
 
     /// The "Update" button text of the `UIAlertController`.
     let updateButtonTitle: String
+    
+    /// Number of time show next button before skip`.
+    let skippableAfter: Int
 
     /// The instance of the `UIAlertController` used to present the update alert.
     var alertController: UIAlertController?
@@ -58,6 +61,7 @@ public class PresentationManager {
     ///     - nextTimeButtonTitle: The `title` field of the Next Time Button `UIAlertAction`.
     ///     - skipButtonTitle: The `title` field of the Skip Button `UIAlertAction`.
     ///     - updateButtonTitle: The `title` field of the Update Button `UIAlertAction`.
+    ///     - skippableAfterL The number of time show next button before skip`.
     ///     - forceLanguage: The language the alert to which the alert should be set. If `nil`, it falls back to the device's preferred locale.
     public init(alertTintColor tintColor: UIColor? = nil,
                 appName: String? = nil,
@@ -68,6 +72,7 @@ public class PresentationManager {
                 updateButtonTitle: String  = AlertConstants.updateButtonTitle,
                 nextTimeButtonTitle: String  = AlertConstants.nextTimeButtonTitle,
                 skipButtonTitle: String  = AlertConstants.skipButtonTitle,
+                skippableAfter: Int = Int.max,
                 forceLanguageLocalization forceLanguage: Localization.Language? = nil) {
         self.alertTitle = alertTitle
         self.alertForceTitle = alertForceTitle
@@ -78,6 +83,7 @@ public class PresentationManager {
         self.updateButtonTitle = updateButtonTitle
         self.skipButtonTitle = skipButtonTitle
         self.tintColor = tintColor
+        self.skippableAfter = skippableAfter
     }
 
     /// The default `PresentationManager`.
@@ -148,7 +154,11 @@ extension PresentationManager {
         case .force:
             alertController?.addAction(updateAlertAction(completion: handler))
         case .option:
-            alertController?.addAction(nextTimeAlertAction(completion: handler))
+            if UserDefaults.showTimes >= skippableAfter {
+                alertController?.addAction(nextTimeAlertAction(completion: handler))
+            } else {
+                alertController?.addAction(skipAlertAction(forCurrentAppStoreVersion: currentAppStoreVersion, completion: handler))
+            }
             alertController?.addAction(updateAlertAction(completion: handler))
         case .skip:
             alertController?.addAction(updateAlertAction(completion: handler))
@@ -198,6 +208,7 @@ private extension PresentationManager {
         let action = UIAlertAction(title: title, style: .default) { _ in
             self.cleanUp()
             handler?(.appStore, nil)
+            UserDefaults.showTimes = 0
             return
         }
 
@@ -220,6 +231,7 @@ private extension PresentationManager {
         let action = UIAlertAction(title: title, style: .default) { _ in
             self.cleanUp()
             handler?(.nextTime, nil)
+            UserDefaults.showTimes += 1
             return
         }
 
@@ -243,6 +255,7 @@ private extension PresentationManager {
         let action = UIAlertAction(title: title, style: .default) { _ in
             self.cleanUp()
             handler?(.skip, currentAppStoreVersion)
+            UserDefaults.showTimes = 0
             return
         }
 
