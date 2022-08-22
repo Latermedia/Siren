@@ -8,6 +8,12 @@
 
 import UIKit
 
+public protocol SirenDelegate: AnyObject {
+    func didShowAlert(currentVersion: String, targetVersion: String, alertType: Rules.AlertType)
+    func didSkipUpdate(currentVersion: String, targetVersion: String, alertType: Rules.AlertType)
+    func didConfirmUpdate(currentVersion: String, targetVersion: String, alertType: Rules.AlertType)
+}
+
 /// The Siren Class.
 public final class Siren: NSObject {
     /// Return results or errors obtained from performing a version check with Siren.
@@ -57,6 +63,9 @@ public final class Siren: NSObject {
 
     /// The completion handler used to return the results or errors returned by Siren.
     private var resultsHandler: ResultsHandler?
+    
+    /// Delegate object to notify
+    public weak var delegate: SirenDelegate?
 
     /// The deinitialization method that clears out all observers,
     deinit {
@@ -238,9 +247,13 @@ private extension Siren {
                       forCurrentAppStoreVersion currentAppStoreVersion: String,
                       model: Model,
                       andUpdateType updateType: RulesManager.UpdateType) {
-        presentationManager.presentAlert(withRules: rules, forCurrentAppStoreVersion: currentAppStoreVersion) { [weak self] alertAction, currentAppStoreVersion in
+        
+        if let currentInstalledVersion = currentInstalledVersion {
+            delegate?.didShowAlert(currentVersion: currentInstalledVersion, targetVersion: currentAppStoreVersion, alertType: rules.alertType)
+        }
+        presentationManager.presentAlert(withRules: rules, forCurrentAppStoreVersion: currentAppStoreVersion) { [weak self] alertAction in
             guard let self = self else { return }
-            self.processAlertAction(alertAction: alertAction, currentAppStoreVersion: currentAppStoreVersion)
+            self.processAlertAction(alertAction: alertAction, currentAppStoreVersion: currentAppStoreVersion, rules: rules)
 
             let results = UpdateResults(alertAction: alertAction,
                                   localization: self.presentationManager.localization,
@@ -250,15 +263,25 @@ private extension Siren {
         }
     }
 
-    func processAlertAction(alertAction: AlertAction, currentAppStoreVersion: String?) {
+    func processAlertAction(alertAction: AlertAction, currentAppStoreVersion: String?, rules: Rules) {
         switch alertAction {
         case .appStore:
+            if let currentInstalledVersion = currentInstalledVersion, let currentAppStoreVersion = currentAppStoreVersion {
+                delegate?.didConfirmUpdate(currentVersion: currentInstalledVersion, targetVersion: currentAppStoreVersion, alertType: rules.alertType)
+            }
             launchAppStore()
+        case .nextTime:
+            if let currentInstalledVersion = currentInstalledVersion, let currentAppStoreVersion = currentAppStoreVersion {
+                delegate?.didSkipUpdate(currentVersion: currentInstalledVersion, targetVersion: currentAppStoreVersion, alertType: rules.alertType)
+            }
         case .skip:
             guard let currentAppStoreVersion = currentAppStoreVersion else { return }
+            if let currentInstalledVersion = currentInstalledVersion {
+                delegate?.didSkipUpdate(currentVersion: currentInstalledVersion, targetVersion: currentAppStoreVersion, alertType: rules.alertType)
+            }
             UserDefaults.storedSkippedVersion = currentAppStoreVersion
             UserDefaults.standard.synchronize()
-        default:
+        case .unknown:
             break
         }
     }

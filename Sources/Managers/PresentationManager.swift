@@ -11,7 +11,7 @@ import UIKit
 /// PresentationManager for Siren
 public class PresentationManager {
     /// Return results or errors obtained from performing a version check with Siren.
-    typealias CompletionHandler = (AlertAction, String?) -> Void
+    typealias CompletionHandler = (AlertAction) -> Void
 
     /// The localization data structure that will be used to construct localized strings for the update alert.
     let localization: Localization
@@ -169,7 +169,7 @@ extension PresentationManager {
             alertController?.addAction(nextTimeAlertAction(completion: handler))
             alertController?.addAction(skipAlertAction(forCurrentAppStoreVersion: currentAppStoreVersion, completion: handler))
         case .none:
-            handler?(.unknown, nil)
+            handler?(.unknown)
         }
 
         // If the alertType is .none, an alert will not be presented.
@@ -211,7 +211,7 @@ private extension PresentationManager {
 
         let action = UIAlertAction(title: title, style: .default) { _ in
             self.cleanUp()
-            handler?(.appStore, nil)
+            handler?(.appStore)
             UserDefaults.showTimes = 0
             return
         }
@@ -234,7 +234,7 @@ private extension PresentationManager {
 
         let action = UIAlertAction(title: title, style: .default) { _ in
             self.cleanUp()
-            handler?(.nextTime, nil)
+            handler?(.nextTime)
             UserDefaults.showTimes += 1
             return
         }
@@ -258,7 +258,7 @@ private extension PresentationManager {
 
         let action = UIAlertAction(title: title, style: .default) { _ in
             self.cleanUp()
-            handler?(.skip, currentAppStoreVersion)
+            handler?(.skip)
             UserDefaults.showTimes = 0
             return
         }
