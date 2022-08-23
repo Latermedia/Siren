@@ -27,16 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        forceLocalizationCustomizationPresentationExample()
 //        customMessagingPresentationExample()
 //        annoyingRuleExample()
-        hyperCriticalRulesExample()
+//        hyperCriticalRulesExample()
 //        updateSpecificRulesExample()
 //        customAlertRulesExample()
 //        appStoreCountryChangeExample()
 //        complexExample()
-
+        conditionalRules()
         return true
     }
 }
-
 // Examples on how to use Siren
 
 private extension AppDelegate {
@@ -266,4 +265,31 @@ private extension AppDelegate {
             }
         }
     }
+    
+    func conditionalRules() {
+        let siren = Siren.shared
+        siren.delegate = self
+        siren.presentationManager = PresentationManager(nextTimeButtonTitle: "My Next", skippableAfter: 2)
+        let rules = GlobalConditionalRules(promptFrequency: .immediately, voluntary: 3, involuntary: 6, majorInvoluntary: 3)
+        siren.rulesManager = RulesManager(globalRules: rules, showAlertAfterCurrentVersionHasBeenReleasedForDays: 1)
+        siren.wail(performCheck: .onDemand) { _ in }
+    }
 }
+
+extension AppDelegate: SirenDelegate {
+    func didShowAlert(currentVersion: String, targetVersion: String, alertType: Rules.AlertType) {
+        print(#function)
+        print("currentVersion", currentVersion, "targetVersion", targetVersion, "alertType", alertType)
+    }
+    
+    func didSkipUpdate(currentVersion: String, targetVersion: String, alertType: Rules.AlertType) {
+        print(#function)
+        print("currentVersion", currentVersion, "targetVersion", targetVersion, "alertType", alertType)
+    }
+    
+    func didConfirmUpdate(currentVersion: String, targetVersion: String, alertType: Rules.AlertType) {
+        print(#function)
+        print("currentVersion", currentVersion, "targetVersion", targetVersion, "alertType", alertType)
+    }
+}
+
